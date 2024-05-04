@@ -54,6 +54,30 @@ function showExercise() {
     // startBreathingExercise(); // Call the startBreathingExercise function defined in breathingExercise.js
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('backgroundMusic');
+    audio.play().catch(function(error) {
+        console.error("Playback failed:", error);
+    });
+});
+
+function toggleMute() {
+    var audio = document.getElementById('backgroundMusic');
+    var muteButton = document.getElementById('muteButton');
+    var onButton = document.getElementById('onButton');
+
+    if (audio.muted) {
+        audio.muted = false;
+        onButton.style.display = 'none';
+        muteButton.style.display = 'inline';
+    } else {
+        audio.muted = true;
+        muteButton.style.display = 'none';
+        onButton.style.display = 'inline';
+    }
+}
+
+
 // // Function to load breathingExercise.js
 // function loadBreathingExerciseScript() {
 //     var script = document.createElement('script');
