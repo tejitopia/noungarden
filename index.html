@@ -5,39 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Noun Garden</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 <div id="header">
-    <h1>Noun Garden</h1>
+    <h1>Noun Garden 🪴</h1>
 </div>
 
 <div id="content">
     <div id="introduction" class="dialogue-box">
-        <p>Hello! My name is Sage and I'm the crypto wellness director here at Noun Garden.</p>
+        <p>Hello! My name is Sage and I'm the Crypto Wellness Director here at Noun Garden.</p>
         <button onclick="showElement('questionCryptoStress')">Start</button>
     </div>
 
     <div id="questionCryptoStress" class="dialogue-box" style="display: none;">
-        <p>Is crypto making you feel stressed, overwhelmed, and burnt out?</p>
+        <p>Is Crypto making you feel stressed, overwhelmed, and burnt out?</p>
         <button onclick="showElement('takeAMoment')">Yes</button>
-        <button onclick="linkTo('https://dextools.com')">No, I don't need rest</button>
+        <button onclick="linkTo('https://www.dextools.io/')">No, I don't need rest</button>
     </div>
 
     <div id="takeAMoment" class="dialogue-box" style="display: none;">
         <p>It's completely normal to feel burnt out, especially in a fast-paced space like web3, so it's important to take a moment for ourselves every now and again.</p>
         <button onclick="showElement('breathingExercise')">Yes I'd love that</button>
-        <button onclick="linkTo('https://dextools.com')">Nah</button>
+        <button onclick="linkTo('https://www.dextools.io/')">Nah, I'm good</button>
     </div>
 
     <div id="breathingExercise" class="dialogue-box" style="display: none;">
-        <p>Please take the next minute to follow this simple box breathing exercise.</p>
+        <p>Please take the next minute to follow this simple nose breathing exercise.</p>
         <img src="box-breathing.gif" alt="Box Breathing Exercise">
-        <button onclick="feelingBetter()">Done</button>
+        <button onclick="feelingBetter()">Yay!</button>
     </div>
 
     <div id="feelingBetter" class="dialogue-box" style="display: none;">
         <p>Feeling better?</p>
-        <button onclick="linkTo('https://dextools.com')">Yes I'm ready to get back to work</button>
+        <button onclick="linkTo('https://discourse.nouns.wtf/')">Yes I'm ready to get back to work</button>
         <button onclick="showElement('breathingExercise')">Nah, still stressed</button>
     </div>
 </div>
