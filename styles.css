@@ -13,7 +13,7 @@
 }
 
 body, html {
-    height: 100%; /* Ensures the body takes full viewport height */
+    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -22,15 +22,14 @@ body, html {
     justify-content: center;
     font-family: 'SFProRounded', Arial, sans-serif;
     background-color: #f4f4f9;
-    font-size: 32px; /* Increased font size for general body text */
+    font-size: 32px;
 }
 
 #header {
     text-align: center;
     width: 100%;
-    padding: 20px 0; /* Padding for spacing around the text */
-    background-color: transparent; /* Removing white background */
-    box-shadow: none; /* Removing box shadow for a clean look */
+    padding: 20px 0;
+    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
@@ -40,20 +39,42 @@ body, html {
 
 #header h1 {
     font-family: 'LondrinaSolid', sans-serif;
-    font-size: 2.5em; /* Keeps the header size proportionate and noticeable */
+    font-size: 2.5em;
     color: #048940;
 }
 
 #content {
-    width: 80%;
-    max-width: 500px;
+    width: 90%;
+    max-width: 1000px;
     position: relative;
-    top: 100px; /* Adjust if header size is modified */
+    top: 100px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: 20px;
+}
+
+.sage-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.sage-image {
+    width: 250px; /* Increased size */
+    height: auto;
+    margin-right: 20px; /* Space between the image and the text/buttons */
+}
+
+
+.dialogues {
+    flex: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px 0; /* Padding to center content vertically */
 }
 
 .dialogue-box {
@@ -62,7 +83,7 @@ body, html {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     text-align: center;
     border-radius: 8px;
-    width: 100%; /* Ensuring full width of the content area */
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -70,8 +91,8 @@ button {
     background-color: #048940;
     border: none;
     color: white;
-    padding: 12px 24px; /* Comfortable padding for the button */
-    font-size: 32px; /* Ensuring the button text is clearly visible */
+    padding: 12px 24px;
+    font-size: 32px;
     margin-top: 20px;
     cursor: pointer;
     border-radius: 4px;
