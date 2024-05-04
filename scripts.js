@@ -16,14 +16,41 @@ function linkTo(url) {
     window.location.href = url;
 }
 
-function feelingBetter() {
-    var breathingExercise = document.getElementById('breathingExercise');
-    var feelingBetter = document.getElementById('feelingBetter');
-
-    if (breathingExercise && feelingBetter) {
-        breathingExercise.style.display = 'none';
-        feelingBetter.style.display = 'block';
+function finishExercise() {
+    var exercise = document.getElementById('Exercise');
+    if (exercise) {
+        exercise.style.display = 'none';
+        showElement('feelingBetter'); // Display the "feeling better" dialogue
     } else {
-        console.error('Error: Element(s) not found for feeling better transition.');
+        console.error('Error: Element not found for finishing the exercise.');
     }
+}
+
+function insertSketch() {
+    // Define your p5.js sketch
+    let sketch = function(p) {
+        // Your p5.js sketch code here
+        p.setup = function() {
+            p.createCanvas(400, 400);
+            p.background(220);
+        }
+
+        p.draw = function() {
+            p.fill(255, 0, 0);
+            p.ellipse(p.width/2, p.height/2, 100, 100);
+        }
+    };
+
+    // Insert the p5.js script into the document
+    let scriptElement = document.createElement('script');
+    scriptElement.innerHTML = `new p5(${sketch});`;
+    document.getElementById('sketch-container').appendChild(scriptElement);
+}
+
+// Function to handle the "Okay" button click
+function showExercise() {
+    // Show the Exercise dialogue box
+    showElement('Exercise');
+    // Insert the p5.js sketch
+    insertSketch();
 }

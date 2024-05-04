@@ -6,6 +6,7 @@
     <title>Noun Garden</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
     <div id="header">
@@ -46,15 +47,13 @@
         </div>
 
         <div id="Exercise" class="dialogue-box hidden">
-            <img src="assets/sage.png" alt="Sage" class="sage-image">
+            <div id="sketch-container"></div> <!-- Container for the p5.js sketch -->
             <div class="text-content">
-                <p>test.</p>
-                <button onclick="showElement('feelingBetter')">Yay!</button>
+                <button id="startBtn" onclick="finishExercise()">Finish</button>
             </div>
         </div>
 
         <div id="feelingBetter" class="dialogue-box hidden">
-            <img src="assets/sage.png" alt="Sage" class="sage-image">
             <div>
                 <p>Feeling better?</p>
                 <button onclick="linkTo('https://discourse.nouns.wtf/')">Yes, I'm ready to get back to work</button>
@@ -62,7 +61,8 @@
             </div>
         </div>
     </div>
-
+    
     <script src="scripts.js"></script>
+    <script src="breathingExercise.js"></script>
 </body>
 </html>
