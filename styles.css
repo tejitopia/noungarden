@@ -1,18 +1,26 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+@font-face {
+    font-family: 'LondrinaSolid';
+    src: url('./fonts/LondrinaSolid-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    height: 100%; /* Ensures the body takes full viewport height */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    justify-content: center;
+    font-family: 'Arial', sans-serif; /* Fallback font */
+    background-color: #f4f4f9;
 }
 
 #header {
     text-align: center;
     width: 100%;
-    padding: 20px 0;
+    padding: 1px 0; /* Reduced padding for a smaller box */
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: fixed;
@@ -22,14 +30,22 @@ body {
     z-index: 1000;
 }
 
+#header h1 {
+    font-family: 'LondrinaSolid', sans-serif; /* Custom font for the header */
+    font-size: 3em; /* Increased font size */
+    color: #333;
+}
+
 #content {
     width: 80%;
     max-width: 600px;
-    margin: 80px auto 0 auto; /* Adjust top margin based on the height of your header */
+    position: relative;
+    top: 80px; /* Adjust this based on the actual height of your reduced header */
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    height: 100%;
+    padding: 20px 0; /* Adds padding around the content */
 }
 
 .dialogue-box {
@@ -38,7 +54,8 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     text-align: center;
     border-radius: 8px;
-    margin-bottom: 20px;
+    width: 100%; /* Full width to match parent container */
+    margin-bottom: 20px; /* Space between dialogue boxes if more than one is shown */
 }
 
 button {
@@ -46,13 +63,13 @@ button {
     border: none;
     color: white;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin-top: 20px;
     cursor: pointer;
     border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 
 button:hover {
