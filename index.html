@@ -33,7 +33,7 @@
         <div id="takeAMoment" class="dialogue-box hidden">
             <img src="assets/sage.png" alt="Sage" class="sage-image">
             <div>
-                <p>It's completely normal to feel burnt out, especially in a fast-paced space like web3, so it's important to take a moment for ourselves every now and again.</p>
+                <p>It's completely normal to feel burnt out, especially in a fast paced environment like web3, so it's important to take a moment for ourselves every now and again.</p>
                 <button onclick="showElement('breathingExercise')">Yes I'd love that</button>
                 <button onclick="linkTo('https://www.dextools.io/')">Nah, I'm good</button>
             </div>
@@ -41,9 +41,14 @@
 
         <div id="breathingExercise" class="dialogue-box hidden">
             <img src="assets/sage.png" alt="Sage" class="sage-image">
-            <div>
-                <p>Please take the next minute to follow this simple nose breathing exercise.</p>
-                <img src="box-breathing.gif" alt="Box Breathing Exercise" class="breathing-gif">
+            <p>Please take the next minute to follow this simple nose breathing exercise.</p>
+            <button onclick="showElement('Exercise')">Okay</button>
+        </div>
+
+        <div id="Exercise" class="dialogue-box hidden">
+            <img src="assets/sage.png" alt="Sage" class="sage-image">
+            <div class="text-content">
+                <p>test.</p>
                 <button onclick="showElement('feelingBetter')">Yay!</button>
             </div>
         </div>
