@@ -1,3 +1,13 @@
+var breathingExerciseLoaded = false;
+
+var plantCanvas = document.getElementById('defaultCanvas0')
+var exerciseDiv = document.getElementById('Exercise')
+
+console.log('We are here')
+hideElement('defaultCanvas0')
+
+exerciseDiv.appendChild(plantCanvas);
+
 function showElement(elementId) {
     var sections = document.querySelectorAll('.dialogue-box');
     sections.forEach(section => {
@@ -10,6 +20,12 @@ function showElement(elementId) {
     } else {
         console.error('Error: No element found with ID:', elementId);
     }
+
+    // Load breathingExercise.js if #Exercise is shown and it hasn't been loaded yet
+    // if (elementId === 'Exercise' && !breathingExerciseLoaded) {
+    //     loadBreathingExerciseScript();
+    //     breathingExerciseLoaded = true;
+    // }
 }
 
 function linkTo(url) {
@@ -26,31 +42,21 @@ function finishExercise() {
     }
 }
 
-function insertSketch() {
-    // Define your p5.js sketch
-    let sketch = function(p) {
-        // Your p5.js sketch code here
-        p.setup = function() {
-            p.createCanvas(400, 400);
-            p.background(220);
-        }
-
-        p.draw = function() {
-            p.fill(255, 0, 0);
-            p.ellipse(p.width/2, p.height/2, 100, 100);
-        }
-    };
-
-    // Insert the p5.js script into the document
-    let scriptElement = document.createElement('script');
-    scriptElement.innerHTML = `new p5(${sketch});`;
-    document.getElementById('sketch-container').appendChild(scriptElement);
+function hideElement(elementId) {
+    var element = document.getElementById(elementId);
+    element.style.display = 'none';
+    element.style.appendChild('hidden')
 }
 
-// Function to handle the "Okay" button click
 function showExercise() {
-    // Show the Exercise dialogue box
     showElement('Exercise');
-    // Insert the p5.js sketch
-    insertSketch();
+    // loadBreathingExerciseScript();
+    // startBreathingExercise(); // Call the startBreathingExercise function defined in breathingExercise.js
 }
+
+// // Function to load breathingExercise.js
+// function loadBreathingExerciseScript() {
+//     var script = document.createElement('script');
+//     script.src = 'breathingExercise.js'; // Adjust the path if necessary
+//     document.body.appendChild(script);
+// }

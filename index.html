@@ -12,13 +12,29 @@
     <div id="header">
         <h1>Noun Garden 🪴</h1>
     </div>
-
     <div id="content">
         <div class="dialogue-box">
             <img src="assets/sage.png" alt="Sage" class="sage-image">
             <div>
                 <p>Hello! My name is Sage and I'm the Crypto Wellness Director here at Noun Garden.</p>
-                <button onclick="showElement('questionCryptoStress')">Start</button>
+                <button onclick="showElement('randomLanding')">Start</button>
+            </div>
+        </div>
+
+        <div id="randomLanding" class="dialogue-box hidden">
+            <img src="assets/sage.png" alt="Sage" class="sage-image">
+            <div>
+                <p>If you’ve randomly landed on our virtual plot of land, take this as a sign from the universe telling you to take some time to slow down and recenter yourself.</p>
+                <button onclick="showElement('personalQuestions')">Proceed</button>
+            </div>
+        </div>
+
+        <div id="personalQuestions" class="dialogue-box hidden">
+            <img src="assets/sage.png" alt="Sage" class="sage-image">
+            <div>
+                <p>Can I ask you some personal questions?</p>
+                <button onclick="showElement('questionCryptoStress')">Yes of course</button>
+                <button class="red-button" onclick="linkTo('https://www.dextools.io/')">No, mind your own business</button>
             </div>
         </div>
 
@@ -26,29 +42,31 @@
             <img src="assets/sage.png" alt="Sage" class="sage-image">
             <div>
                 <p>Is Crypto making you feel stressed, overwhelmed, and burnt out?</p>
-                <button onclick="showElement('takeAMoment')">Yes</button>
-                <button onclick="linkTo('https://www.dextools.io/')">No, I don't need rest</button>
+                <button onclick="showElement('takeAMoment')">Yeah</button>
+                <button class="red-button" onclick="linkTo('https://www.dextools.io/')">Nah</button>
             </div>
         </div>
 
         <div id="takeAMoment" class="dialogue-box hidden">
             <img src="assets/sage.png" alt="Sage" class="sage-image">
             <div>
-                <p>It's completely normal to feel burnt out, especially in a fast paced environment like web3, so it's important to take a moment for ourselves every now and again.</p>
+                <p>It's completely normal to feel burnt out especially in a fast paced space like web3. Would you like to take a moment to ground yourself and bring your mind back to centre?</p>
                 <button onclick="showElement('breathingExercise')">Yes I'd love that</button>
-                <button onclick="linkTo('https://www.dextools.io/')">Nah, I'm good</button>
+                <button class="red-button" onclick="linkTo('https://www.dextools.io/')">Nah, I'm good</button>
             </div>
         </div>
 
         <div id="breathingExercise" class="dialogue-box hidden">
             <img src="assets/sage.png" alt="Sage" class="sage-image">
             <p>Please take the next minute to follow this simple nose breathing exercise.</p>
-            <button onclick="showElement('Exercise')">Okay</button>
+            <button onclick="showExercise()">Okay</button>
         </div>
 
         <div id="Exercise" class="dialogue-box hidden">
             <div id="sketch-container"></div> <!-- Container for the p5.js sketch -->
             <div class="text-content">
+                <!-- Include your breathingExercise.js script here -->
+                <img src="assets/tree.gif" alt="Tree Animation" style="display: block; margin: auto; width: 60%; height: auto;">
                 <button id="startBtn" onclick="finishExercise()">Finish</button>
             </div>
         </div>
@@ -58,12 +76,11 @@
                 <img src="assets/sage.png" alt="Sage" class="sage-image">
                 <p>Feeling better?</p>
                 <button onclick="linkTo('https://discourse.nouns.wtf/')">Yes, I'm ready to get back to work</button>
-                <button onclick="showElement('breathingExercise')">Nah, still stressed</button>
+                <button class="red-button" onclick="showElement('breathingExercise')">Nah, still stressed</button>
             </div>
         </div>
     </div>
-    
+
     <script src="scripts.js"></script>
-    
 </body>
 </html>
