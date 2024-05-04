@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noun Garden</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="content">
+    <h1>Welcome to Noun Garden</h1> <!-- This stays visible at all times -->
+    
+    <div id="introduction">
+        <p>Hello! My name is Sage and I'm the crypto wellness director here at Noun Garden.</p>
+        <button onclick="showElement('questionCryptoStress')">Start</button>
+    </div>
+
+    <div id="questionCryptoStress" class="hidden content-section">
+        <p>Is crypto making you feel stressed, overwhelmed, and burnt out?</p>
+        <button onclick="showElement('takeAMoment')">Yes</button>
+        <button onclick="linkTo('https://dextools.com')">No, I don't need rest</button>
+    </div>
+
+    <div id="takeAMoment" class="hidden content-section">
+        <p>It's completely normal to feel burnt out, especially in a fast-paced space like web3, so it's important to take a moment for ourselves every now and again.</p>
+        <button onclick="showElement('breathingExercise')">Yes I'd love that</button>
+        <button onclick="linkTo('https://dextools.com')">Nah</button>
+    </div>
+
+    <div id="breathingExercise" class="hidden content-section">
+        <p>Please take the next minute to follow this simple box breathing exercise.</p>
+        <img src="box-breathing.gif" alt="Box Breathing Exercise">
+        <button onclick="feelingBetter()">Done</button>
+    </div>
+
+    <div id="feelingBetter" class="hidden content-section">
+        <p>Feeling better?</p>
+        <button onclick="linkTo('https://dextools.com')">Yes I'm ready to get back to work</button>
+        <button onclick="showElement('breathingExercise')">Nah, still stressed</button>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
